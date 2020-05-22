@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+		function przelicz1(){
+			var x = Number(document.formularz.liczba.value);
+			if(x >= -273.15){
+				var suma = x + 273.15;
+			}
+			else
+				alert("Przekroczyłeś zakres temperatur");
+			document.getElementById("wynik").innerHTML = suma+" K";
+		}
+		function przelicz2(){
+			var x = Number(document.formularz.liczba.value);
+			if(x >= -273.15){
+				var suma = (x*1.8) + 32;
+			}
+			document.getElementById("wynik").innerHTML = suma+" <sup>o</sup>F";
+		}
+		function przelicz3(){
+			var x = Number(document.formularz.liczba.value);
+			if(x >= -273.15){
+				var suma = (9/5)*(x + 273.15);
+			}
+			document.getElementById("wynik").innerHTML = suma+" <sup>o</sup>R";
+		}
+	</script>
+</head>
+<body>
+	<form name="formularz">
+		Podaj temperaturę w <sup>o</sup>C
+		<input type="text" name="liczba"/>
+		<br />
+		<br />
+		<input type="button" value="na Kelwiny" onClick="przelicz1()" />
+		<input type="button" value="na Fahrenheity" onClick="przelicz2()" />
+		<input type="button" value="na Rankine’a" onClick="przelicz3()" />
+		<input type="reset" />
+	</form>
+	<br />
+	Wynik przeliczenia:
+	<br />
+	<div id="wynik"></div>
+	<br />
+	<br />
+    
+    </script>
+</body>
+</html>
