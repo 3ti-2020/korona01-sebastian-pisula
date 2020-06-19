@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">Wyświetl</button>
+
+    <ul id="people"></ul>
+
+    <script>
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener('click', function(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    console.log(xhttp.responseText);
+                    let response = JSON.parse(xhttp.responseText);
+
+                    let output = "";
+                    for(let i = 0;i < response.length;i++){
+                        output += "<li>"+response[i].Name+"</li>";
+
+                    }
+
+                    document.getElementById('people').innerHTML = output;
+                }
+            };
+            xhttp.open("GET", "dane.php", true);
+            xhttp.send();
+        });
+
+    </script>
+    
+</body>
+</html>
