@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kornel Kempa</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        body{
+            display: flex;
+        }
+        .listaOcen{
+            margin: 20px;
+            height: 150px;
+            width: 150px;
+            background-color: peachpuff;
+            display: none;
+        }
+        .lista{
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="itemA"><h1 class="tytul">Kalkulatory w JavaScript</h1></div>
+        <div class="itemB">
+            <ul class="ul1">
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="index2.html">Kalkulator 1</a></li>
+                <li><a href="index3.html">Kalkulator 2</a></li>
+                <li><a href="index4.html">Kalkulator 3</a></li>
+            </ul>
+        </div>
+        <div class="itemC">
+            <div>
+                <h2>Średnia ocen</h2>
+                <p><input type="text" class="ocena" placeholder="ocena"></p>
+                <p><input type="text" class="waga" placeholder="waga"></p>
+                <button class="dodajLiczbe">Dodaj Liczbe</button>
+                <button class="oblicz">Oblicz</button>
+                <p>Wynik: <span class="wynikTxt">...</span></p>
+                <p><button class="pokazListe">Pokaż listę ocen</button></p>
+            </div>
+    
+            <div class="listaOcen">
+                <span class="lista"></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="main4.js"></script>
+</html>
